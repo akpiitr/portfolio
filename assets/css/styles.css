@@ -35,6 +35,15 @@ body {
     box-shadow: 0px 0px 10px gray;
 }
 
+/* Profile Image Styling */
+#home img {
+    width: 200px;  /* Adjust width as needed */
+    height: 200px;  /* Adjust height as needed */
+    border-radius: 50%;  /* Makes it circular */
+    object-fit: cover;  /* Ensures the image is properly scaled */
+    border: 5px solid #1e5ad9; /* Border color similar to your current design */
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .navbar {
