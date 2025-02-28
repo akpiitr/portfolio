@@ -1,3 +1,6 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 /* Global Styles */
 body {
     font-family: 'Inter', sans-serif;
@@ -5,7 +8,7 @@ body {
     padding: 0;
     text-align: center;
     background-color: #f4f4f4;
-    padding-top: 80px; /* Prevents content from being hidden under navbar */
+    padding-top: 70px; /* Prevents content from being hidden under navbar */
     color: #333;
 }
 
@@ -14,17 +17,21 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 123, 255, 0.9);
-    padding: 18px 40px;
+    background: rgba(0, 123, 255, 0.95);
+    padding: 15px 20px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
     transition: all 0.3s ease-in-out;
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
 
-/* Navbar Links */
+.navbar .menu {
+    display: flex;
+    gap: 15px;
+}
+
 .navbar a {
     color: white;
     font-size: 16px;
@@ -41,8 +48,46 @@ body {
 
 /* Shrink Navbar on Scroll */
 .navbar.shrink {
-    padding: 10px 30px;
-    background: rgba(0, 102, 204, 0.9);
+    padding: 8px 15px;
+    background: rgba(0, 102, 204, 0.95);
+}
+
+/* Mobile Navbar */
+.navbar .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .navbar .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        text-align: left;
+        background: rgba(0, 123, 255, 0.95);
+    }
+
+    .navbar .menu a {
+        display: block;
+        padding: 10px;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+    }
+
+    .navbar.open .menu {
+        display: flex;
+    }
 }
 
 /* Sections */
@@ -138,15 +183,6 @@ a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 12px;
-    }
-
-    .navbar a {
-        padding: 10px;
-    }
-
     .section {
         padding: 40px 20px;
         width: 90%;
