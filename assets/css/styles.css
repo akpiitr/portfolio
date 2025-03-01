@@ -17,7 +17,13 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #0073e6;
+    background: rgba(0, 123, 255, 0.95);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
     z-index: 1000;
 }
 
@@ -25,14 +31,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    width: 100%;
 }
 
 .nav-logo {
     color: white;
     font-size: 20px;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .nav-menu {
@@ -57,6 +63,7 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 10px;
 }
 
 .bar {
@@ -65,6 +72,34 @@ body {
     background-color: white;
     margin: 4px 0;
     transition: 0.4s;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(0, 123, 255, 0.95);
+        padding: 10px 0;
+        text-align: left;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        padding: 12px 20px;
+        display: block;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
 }
 
 /* Responsive Styles */
